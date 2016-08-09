@@ -12,7 +12,13 @@ var ScreenNameContainer = React.createClass({
     },
     handleSubmitUser: function(e) {
         e.preventDefault();
-        var username = this.state.username;
+        var username = this.state.username.trim();
+
+        if(!username){
+            this.setState({error: 'please provide a username'});
+            return false;
+        }
+
         this.setState({
             username: ''
         });
@@ -30,8 +36,15 @@ var ScreenNameContainer = React.createClass({
         }
     },
     handleUpdateUser: function(event) {
+        var username = event.target.value.trim();
+        if(username) {
+            this.setState({error: ''});
+        }else{
+            this.setState({error: 'please provide a username'});
+        }
+
         this.setState({
-            username: event.target.value
+            username: username
         });
     },
     render: function() {
@@ -39,6 +52,7 @@ var ScreenNameContainer = React.createClass({
             onUpdateUser = { this.handleUpdateUser }
             header = { this.props.route.header }
             username = { this.state.username }
+            error = { this.state.error }
             />
         )
     }
