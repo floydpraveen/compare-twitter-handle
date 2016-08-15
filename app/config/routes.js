@@ -1,16 +1,10 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var IndexRoute = ReactRouter.IndexRoute;
-var hashHistory = ReactRouter.hashHistory;
-var Main = require('../components/Main');
-var Home = require('../components/Home');
-var ScreenNameContainer = require('../containers/ScreenNameContainer');
-var ShowUserDetailsContainer = require('../containers/ShowUserDetailsContainer');
-var ResultsContainer = require('../containers/ResultsContainer');
-
-
+import React from 'react';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import Main from '../components/Main';
+import Home from '../components/Home';
+import ScreenNameContainer from '../containers/ScreenNameContainer';
+import ShowUserDetailsContainer from '../containers/ShowUserDetailsContainer';
+import ResultsContainer from '../containers/ResultsContainer';
 
 var routes = (
     <Router history={hashHistory}>
